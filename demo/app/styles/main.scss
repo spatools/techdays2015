@@ -67,6 +67,14 @@ body {
     margin-top: 28px;
 }
 
+/* User logo */
+.user-logo {
+    float: left;
+    margin-top: 2px;
+    margin-right: 1em;
+    height: 50px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
