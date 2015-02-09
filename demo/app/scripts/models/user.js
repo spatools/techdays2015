@@ -7,9 +7,9 @@ define([
     'use strict';
 
     var UserModel = Backbone.Model.extend({
-        url: '',
 
         initialize: function() {
+            this.url = "https://api.github.com/users/" + this.get("login");
         },
 
         defaults: {

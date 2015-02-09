@@ -1,2 +1,32 @@
-<p>Your content here.</p>
+<div class="user">
+  <img src="<%= avatar_url %>" class="user-logo" />
+  <h3>
+    <%= login %>
+  </h3>
+  <h5>
+    <%= bio %>
+  </h5>
 
+  <ul class="nav nav-pills" role="tablist">
+    <li role="presentation">
+      Repos <span class="badge">
+        <%= public_repos %>
+      </span>
+    </li>
+    <li role="presentation">
+      Gists <span class="badge">
+        <%= public_gists %>
+      </span>
+    </li>
+    <li role="presentation">
+      Following <span class="badge">
+        <%= following %>
+      </span>
+    </li>
+    <li role="presentation">
+      Followers <span class="badge">
+        <%= followers %>
+      </span>
+    </li>
+  </ul>
+</div>
