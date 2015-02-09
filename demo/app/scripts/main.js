@@ -17,7 +17,10 @@ require.config({
 });
 
 require([
-    'backbone'
-], function (Backbone) {
+    'backbone',
+    'routes/user'
+], function (Backbone, UserRouter) {
+    new UserRouter();
+
     Backbone.history.start();
 });
