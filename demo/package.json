@@ -1,6 +1,6 @@
 {
   "name": "techdays2015",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "dependencies": {},
   "devDependencies": {
     "apache-server-configs": "^2.8.0",
