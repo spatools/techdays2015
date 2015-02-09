@@ -18,6 +18,7 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
     // load all grunt tasks
     require('load-grunt-tasks')(grunt);
+    grunt.loadTasks("tasks");
 
     // configurable paths
     var yeomanConfig = {
@@ -41,7 +42,7 @@ module.exports = function (grunt) {
                     livereload: grunt.option('livereloadport') || LIVERELOAD_PORT
                 },
                 files: [
-                    '<%= yeoman.app %>/*.html',
+                    '{.tmp,<%= yeoman.app %>}/*.html',
                     '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
@@ -54,6 +55,10 @@ module.exports = function (grunt) {
                     '<%= yeoman.app %>/scripts/templates/*.ejs'
                 ],
                 tasks: ['jst']
+            },
+            version: {
+                files: ["package.json", "<%= yeoman.app %>/*.html"],
+                tasks: ["versioning:server"]
             },
             test: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.js', 'test/spec/**/*.js'],
@@ -273,6 +278,12 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+        versioning: {
+            server: {
+                src: ["<%= yeoman.app %>/index.html"],
+                dest: ".tmp/"
+            }
         }
     });
 
@@ -307,6 +318,7 @@ module.exports = function (grunt) {
             'createDefaultTemplate',
             'jst',
             'compass:server',
+            'versioning:server',
             'connect:livereload',
             'open:server',
             'watch'
