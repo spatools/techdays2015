@@ -18,8 +18,10 @@ require.config({
 
 require([
     'backbone',
+    'routes/index',
     'routes/user'
-], function (Backbone, UserRouter) {
+], function (Backbone, IndexRouter, UserRouter) {
+    new IndexRouter();
     new UserRouter();
 
     Backbone.history.start();
