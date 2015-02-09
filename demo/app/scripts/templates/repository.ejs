@@ -1,2 +1,42 @@
-<p>Your content here.</p>
+<div class="repository">
+  <h3>
+    <%= name %>
+  </h3>
+  <h5>
+    <%= description %>
+  </h5>
 
+  <div class="jumbotron pull-right">
+    <img src=""<%= owner.avatar_url %>" class="user-logo" />
+    <h3>
+      <%= owner.login %>
+    </h3>
+  </div>
+
+  <ul class="nav nav-pills" role="tablist">
+    <li role="presentation">
+      Stars
+      <span class="badge">
+        <%= stargazers_count %>
+      </span>
+    </li>
+    <li role="presentation">
+      Watchers
+      <span class="badge">
+        <%= watchers_count %>
+      </span>
+    </li>
+    <li role="presentation">
+      Forks
+      <span class="badge">
+        <%= forks %>
+      </span>
+    </li>
+    <li role="presentation">
+      Issues
+      <span class="badge">
+        <%= open_issues %>
+      </span>
+    </li>
+  </ul>
+</div>

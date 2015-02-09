@@ -33,9 +33,7 @@
   <h4>Repositories</h4>
   <div class="list-group">
     <% _.each(repos, function(repo) { %>
-    <a href="#/users/"
-      <%= repo.full_name %>" class="list-group-item"><%= repo.name %>
-    </a>
+    <a href="#/users/<%= repo.full_name %>" class="list-group-item"><%= repo.name %></a>
     <% }) %>
   </div>
 </div>
