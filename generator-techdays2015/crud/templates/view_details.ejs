@@ -1,0 +1,17 @@
+<h2>Details <%= name %></h2>
+<div class="panel panel-default">
+  <% _.each(attrs, function (attr) { %>
+  <div class="form-group">
+    <label for="<%= attr.name %>"><%= attr.name %></label>
+    <span id="<%= attr.name %>">
+      <% print(['<','%','=', ' '].join('') + attr.name + [' ','%','>'].join('')); %>
+    </span>
+  </div>
+  <% }); %>
+
+  <div>
+    <a href="#/<%= name %>"><< Back to list</a>
+    <a href="#/<%= name %>/<% print(['<','%','=', ' '].join('') + 'id' + [' ','%','>'].join('')); %>/edit">Edit</a>
+  </div>
+</div>
+

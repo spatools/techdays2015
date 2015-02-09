@@ -1,0 +1,24 @@
+<h2><%= name %>s</h2>
+<a class="btn btn-primary" href="#/<%= name %>/create">New <%= name %></a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <% _.each(attrs, function (attr) { %><th><%= attr.name %></th><% }); %>
+    </tr>
+  </thead>
+  <tbody>
+    <% print(['<','%', ' '].join('') + '_.each(collection, function (item) {' + [' ','%','>'].join('')); %>
+    <tr>
+      <td>
+        <a href="#/<%= name %>/<% print(['<','%','=', ' '].join('') + 'item.id' + [' ','%','>'].join('')); %>">Details</a>|
+        <a href="#/<%= name %>/<% print(['<','%','=', ' '].join('') + 'item.id' + [' ','%','>'].join('')); %>/edit">Edit</a>
+      </td>
+      <% _.each(attrs, function (attr) { %><td>
+        <% print(['<','%','=', ' '].join('') + attr.name + [' ','%','>'].join('')); %>
+      </td>
+      <% }); %>
+    </tr>
+    <% print(['<','%', ' '].join('') + '}' + [' ','%','>'].join('')); %>
+  </tbody>
+</table>
