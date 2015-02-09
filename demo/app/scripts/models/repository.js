@@ -7,9 +7,9 @@ define([
     'use strict';
 
     var RepositoryModel = Backbone.Model.extend({
-        url: '',
 
         initialize: function() {
+            this.url = "https://api.github.com/repos/" + this.get("full_name");
         },
 
         defaults: {
